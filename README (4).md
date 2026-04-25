@@ -234,9 +234,17 @@ KQ: Trả về nhiều bảng dữ liệu nhỏ, liệt kê: Tên cột, kiểu 
 • sp_helptext: Thủ tục này cực kỳ hữu ích khi bạn muốn xem lại nội dung mã nguồn của một đối tượng (như Function, View, hoặc Procedure khác) đã được lưu trong cơ sở dữ liệu. Nó sẽ hiển thị toàn bộ đoạn code CREATE mà bạn đã thực thi trước đó.
 • Cách dùng: EXEC sp_helptext 'Ten_Doi_Tuong';
 • sp_rename: Đúng như tên gọi, thủ tục này dùng để đổi tên các đối tượng (bảng, cột, chỉ mục) trong Database hiện hành. Việc sử dụng thủ tục này được khuyến khích thay vì cố gắng sửa tên bằng giao diện đồ họa để đảm bảo tính đồng bộ.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/01f17759-f8e1-4699-8dbe-99ad0bbd21fe" />
+
 • Cách dùng: EXEC sp_rename 'Ten_Cu', 'Ten_Moi';
-• sp_who: Cung cấp thông tin về các người dùng và các tiến trình (sessions) hiện đang kết nối vào SQL Server. Nó giúp bạn biết được ai đang truy cập vào Database của mình và trạng thái hoạt động của họ ra sao.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebbfd31-9523-477d-b32e-89b245e8926d" />
+
+
+• sp_who: Cung cấp thông tin về các người dùng và các tiến trình (sessions) hiện đang kết nối vào SQL Server. Nó giúp bạn biết được ai đang truy cập vào Database của mình và trạng thái hoạt động của họ ra sao.\
 • Cách dùng: EXEC sp_who;
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fa914149-f6eb-481c-b16c-bc0096399417" />
+
 • sp_databases: Liệt kê danh sách tất cả các Database hiện có trên máy chủ SQL Server đó, kèm theo thông tin về kích thước của từng Database.
 • Cách dùng: EXEC sp_databases
 
