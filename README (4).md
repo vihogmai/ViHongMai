@@ -49,7 +49,7 @@
 
 
   + Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...).
-    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/90027c47-568e-4ae8-b106-4fe45683c449" />
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/599ec565-f44b-4ba1-ac3e-b84487545642" />
 
 
   + Áp dụng đúng quy tắc đặt tên (BướuLạcĐà).
@@ -59,6 +59,11 @@
   + Sử dụng cặp ngoặc [ ] để bọc tên bảng và tên trường trong script khởi tạo.
 
   + Có giải thích chỗ nào là PK, chỗ nào là FK, trường nào có ràng buộc cứng CK (ví dụ điểm từ 0..10),...
+    PK (Khóa chính): [MaHopDong] dùng để phân biệt các hợp đồng khác nhau, không cho phép trùng lặp.
+• FK (Khóa ngoại): [MaPhong] và [MaKhachThue] là hai "cầu nối" giúp hệ thống biết chính xác khách thuê nào đang ở phòng nào. Nếu xóa một khách đang có hợp đồng, SQL sẽ ngăn chặn để bảo vệ dữ liệu.
+• CK (Ràng buộc Check): [ThoiHanThang] >= 1 đảm bảo tính thực tế, hợp đồng phải có thời hạn thuê rõ ràng.
+   
+
 
 ### Phần 2: Xây dựng Function (Kiến thức 8, 9) 
 
