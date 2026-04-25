@@ -61,10 +61,26 @@
 
 
   + Có giải thích chỗ nào là PK, chỗ nào là FK, trường nào có ràng buộc cứng CK (ví dụ điểm từ 0..10),...
-    PK (Khóa chính): [MaHopDong] dùng để phân biệt các hợp đồng khác nhau, không cho phép trùng lặp.
-• FK (Khóa ngoại): [MaPhong] và [MaKhachThue] là hai "cầu nối" giúp hệ thống biết chính xác khách thuê nào đang ở phòng nào. Nếu xóa một khách đang có hợp đồng, SQL sẽ ngăn chặn để bảo vệ dữ liệu.
-• CK (Ràng buộc Check): [ThoiHanThang] >= 1 đảm bảo tính thực tế, hợp đồng phải có thời hạn thuê rõ ràng.
-   
+    
+   QuanLyPhongTro_K235480106049], các quy tắc logic được thiết lập như sau:
+1. Khóa chính (PK - Primary Key)
+• Vị trí: [MaLoaiPhong], [MaKhachThue], [MaPhong], [MaHopDong].
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e1ac4ea5-a141-4db1-a8b3-c82dcdebf045" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6c7fcf51-b92d-4859-9886-6e7b699e9eaa" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/03611f4b-030e-4717-9731-7d07b1c167c3" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e185498b-c6be-4639-8a4e-29c7e0836b73" />
+
+
+
+
+3. Khóa ngoại (FK - Foreign Key)
+• Vị trí:
+• [MaLoaiPhong] (trong bảng PhongTro): Nối sang bảng [LoaiPhong].
+• [MaPhong] (trong bảng HopDong): Nối sang bảng [PhongTro].
+• [MaKhachThue] (trong bảng HopDong): Nối sang bảng [KhachThue]
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0ee83cc6-76f2-447e-8c0d-df06bf312d38" />
+ Sơ đồ thực thể quan hệ thể hiện các Khóa ngoại (FK) nối giữa bảng LoaiPhong - PhongTro và PhongTro - HopDong."
+
 
 
 ### Phần 2: Xây dựng Function (Kiến thức 8, 9) 
