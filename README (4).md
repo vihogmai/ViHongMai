@@ -48,6 +48,8 @@
 
 
   + Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...).
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/90027c47-568e-4ae8-b106-4fe45683c449" />
+
 
   + Áp dụng đúng quy tắc đặt tên (BướuLạcĐà).
 
