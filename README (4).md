@@ -222,6 +222,24 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
 
   + Trong SQL Server có những SP có sẵn nào? nêu 1 vài system sp mà em tìm hiểu được, giải thích cách dùng chúng.
 
+    System Stored Procedures là các thủ tục được cài đặt sẵn cùng với SQL Server, thường được lưu trữ trong Database hệ thống master hoặc msdb, nhưng có thể gọi được từ bất kỳ Database nào của người dùng. Đặc điểm nhận dạng của các thủ tục này là thường bắt đầu bằng tiền tố sp_. Chúng giúp thực hiện các nhiệm vụ từ quản trị bảo mật, kiểm tra cấu trúc đối tượng, đến theo dõi hiệu suất hệ thống.
+2. Một số System Stored Procedures tiêu biểu
+Dưới đây là một vài thủ tục quan trọng mà bạn có thể tìm hiểu và ứng dụng ngay trong đồ án:
+• sp_help: Đây là thủ tục "vạn năng" để xem thông tin chi tiết. Khi bạn truyền tên của một bảng, View hoặc Function vào, SQL Server sẽ trả về toàn bộ thông tin về các cột, kiểu dữ liệu, các khóa chính (Primary Key), khóa ngoại (Foreign Key) và các ràng buộc đi kèm.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d733a86c-0937-4644-9baf-441c3544a154" />
+KQ: Trả về nhiều bảng dữ liệu nhỏ, liệt kê: Tên cột, kiểu dữ kiệu( int, nvarchar...,) độ dài, các khóa chính/ khóa ngoại.
+
+• Cách dùng: EXEC sp_help 'Ten_Bang';
+• sp_helptext: Thủ tục này cực kỳ hữu ích khi bạn muốn xem lại nội dung mã nguồn của một đối tượng (như Function, View, hoặc Procedure khác) đã được lưu trong cơ sở dữ liệu. Nó sẽ hiển thị toàn bộ đoạn code CREATE mà bạn đã thực thi trước đó.
+• Cách dùng: EXEC sp_helptext 'Ten_Doi_Tuong';
+• sp_rename: Đúng như tên gọi, thủ tục này dùng để đổi tên các đối tượng (bảng, cột, chỉ mục) trong Database hiện hành. Việc sử dụng thủ tục này được khuyến khích thay vì cố gắng sửa tên bằng giao diện đồ họa để đảm bảo tính đồng bộ.
+• Cách dùng: EXEC sp_rename 'Ten_Cu', 'Ten_Moi';
+• sp_who: Cung cấp thông tin về các người dùng và các tiến trình (sessions) hiện đang kết nối vào SQL Server. Nó giúp bạn biết được ai đang truy cập vào Database của mình và trạng thái hoạt động của họ ra sao.
+• Cách dùng: EXEC sp_who;
+• sp_databases: Liệt kê danh sách tất cả các Database hiện có trên máy chủ SQL Server đó, kèm theo thông tin về kích thước của từng Database.
+• Cách dùng: EXEC sp_databases
+
   + Viết 01 Store Procedure đơn giản để thực hiện lệnh INSERT hoặc UPDATE dữ liệu, có kiểm tra điều kiện logic (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
 
   + Viết 01 Store Procedure có sử dụng tham số OUTPUT để trả về một giá trị tính toán (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ, SP NÀY CÓ DÙNG THAM SỐ LOẠI OUTPUT)
