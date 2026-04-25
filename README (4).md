@@ -87,33 +87,44 @@
 
   + Hãy cho biết trong SQL Server có những loại function build_in (hàm có sẵn) nào, nêu 1 vài system function build_in mà em tìm hiểu được (ko cần nhiều, cần đặc sắc theo góc nhìn của em), cho SQL khai thác các hàm đó.
     SQL Server cung cấp hàng trăm hàm chia thành các nhóm chính sau:
+    
 • String Functions (Hàm chuỗi): Xử lý văn bản (Vd: LEN, UPPER, REPLACE, SUBSTRING).
 • Math Functions (Hàm toán học): Tính toán số học (Vd: ROUND, ABS, RAND).
 • Date and Time Functions (Hàm ngày tháng): Xử lý thời gian (Vd: GETDATE, DATEDIFF, DATEADD).
 • Aggregate Functions (Hàm tập hợp): Tính toán trên một tập dữ liệu (Vd: SUM, AVG, COUNT, MAX, MIN).
 • Conversion Functions (Hàm chuyển đổi): Chuyển đổi kiểu dữ liệu (Vd: CAST, CONVERT).
-2. Các hàm System mà e đã tìm hiểu đc
-1. ISNULL(check_expression, replacement_value): Kiểm tra nếu dữ liệu bị trống (NULL) thì thay bằng một giá trị khác. Rất quan trọng khi tính tiền để tránh bị lỗi phép tính.
-2. FORMAT(): Hàm này cực kỳ mạnh mẽ để định dạng dữ liệu theo chuẩn địa phương. Ví dụ: biến một con số thành định dạng tiền tệ Việt Nam (VNĐ).
-3. DATEDIFF(interval, start, end): Tính toán khoảng cách giữa hai mốc thời gian. Cực kỳ hữu ích để tính số tháng khách đã ở hoặc số ngày quá hạn tiền nhà
+
+ Các hàm System mà e đã tìm hiểu đc
+ 
+ISNULL(check_expression, replacement_value): Kiểm tra nếu dữ liệu bị trống (NULL) thì thay bằng một giá trị khác. Rất quan trọng khi tính tiền để tránh bị lỗi phép tính.
+FORMAT(): Hàm này cực kỳ mạnh mẽ để định dạng dữ liệu theo chuẩn địa phương. Ví dụ: biến một con số thành định dạng tiền tệ Việt Nam (VNĐ).
+DATEDIFF(interval, start, end): Tính toán khoảng cách giữa hai mốc thời gian. Cực kỳ hữu ích để tính số tháng khách đã ở hoặc số ngày quá hạn tiền nhà
+
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76b487fb-93d9-4687-977a-0213ca6fdcd1" />
 
 
 
   + Hàm do người dùng tự viết trong SQL thường mang mục đích gì? Nó có những loại nào? Mỗi loại thường được dùng khi nào? Tại sao có nhiều system function rồi mà vẫn cần tự viết fn riêng?
-    Mục đích:
+    
+    Mục đích
+    
     Tính tái sử dụng: Thay vì phải viết đi viết lại một công thức tính tiền cọc phức tạp ở 10 trang báo cáo khác nhau, bạn chỉ cần viết một cái hàm và gọi tên nó ra.
+    
  Đơn giản hóa câu lệnh SQL: Biến một đoạn code dài dằng dặc thành một cái tên hàm ngắn gọn, giúp code sạch sẽ và dễ đọc hơn.
 • Tính nhất quán: Khi công thức tính tiền thay đổi, bạn chỉ cần sửa ở 1 nơi (trong hàm), tất cả các báo cáo khác sẽ tự động cập nhật theo
+
 "Trong hệ thống quản lý trọ, việc tính toán tiền phòng tháng đầu rất dễ nhầm lẫn. Vì vậy, chúng tôi xây dựng hàm fn_TongTienNopDauVao để chuẩn hóa công thức này."
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9a183e9f-f642-4049-ac3d-0b9002a01cbb" />
 
+
 có 3 loại:
+
 Scalar Function (Hàm vô hướng)
 • Đặc điểm: Trả về duy nhất 01 giá trị (có thể là số, chuỗi ký tự, hoặc ngày tháng).
 • Khi nào dùng: * Thực hiện các phép tính toán đơn giản dựa trên đầu vào (ví dụ: tính tổng tiền, tính thuế, tính tuổi).
 • Chuẩn hóa dữ liệu (ví dụ: chuyển tên thành viết hoa, cắt tỉa khoảng trắng).
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c748bba-7155-425e-bd5c-a87f8bd1b59c" />
 
 
@@ -122,6 +133,7 @@ Inline Table-Valued Function (Hàm trả về bảng đơn giản)
 • Khi nào dùng: * Dùng để lọc dữ liệu nhanh chóng theo tham số truyền vào.
 • Nó hoạt động giống như một cái "View động" có thể nhận tham số.
 • Loại này có hiệu suất (performance) tốt nhất vì SQL Server tối ưu nó rất tốt
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1e44d96c-920b-4c9c-829e-062b02952bd5" />
 
 
@@ -130,14 +142,15 @@ Multi-statement Table-Valued Function (Hàm trả về bảng phức tạp)
 • Đặc điểm: Cũng trả về một bảng, nhưng khác ở chỗ nó có cấu trúc phức tạp hơn. Bạn phải khai báo một biến bảng tạm thời, sau đó dùng các lệnh INSERT để đổ dữ liệu vào bảng đó trước khi trả về kết quả cuối cùng.
 • Khi nào dùng: * Khi logic để lấy dữ liệu quá phức tạp, không thể viết gọn trong 1 câu SELECT.
 • Cần sử dụng các cấu trúc điều khiển như IF...ELSE, WHILE hoặc thực hiện nhiều bước tính toán trung gian trước khi ra kết qủa
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76c7c977-2369-43cd-96a8-1e218ef740f2" />
 
 
 Dù SQL cung cấp sẵn rất nhiều hàm (như SUM, GETDATE, UPPER), UDF vẫn không thể thiếu vì các lý do sau:
-1. Logic nghiệp vụ riêng biệt (Domain Logic): System functions chỉ xử lý các tác vụ chung. Hệ thống của bạn có cách tính điểm ưu tiên cho khách hàng thân thiết rất "quái chiêu" mà không ngôn ngữ SQL nào có sẵn hàm TINH_DIEM_UU_TIEN() cho bạn cả.
-2. Đơn giản hóa câu lệnh Query: Một câu SELECT chứa hàng chục phép toán lồng nhau sẽ cực kỳ khó đọc. Đưa logic đó vào hàm giúp câu query chính trông sạch sẽ và dễ bảo trì hơn.
-3. Tính nhất quán: Nếu công thức tính lương thay đổi, bạn chỉ cần sửa trong 1 hàm duy nhất thay vì đi lùng sục hàng trăm file code hay store procedure để sửa thủ công.
-4. Bù đắp giới hạn của View: Như đã nói, UDF có thể nhận tham số, giúp nó linh hoạt hơn View rất nhiều trong việc lọc dữ liệu động.
+
+Logic nghiệp vụ riêng biệt (Domain Logic): System functions chỉ xử lý các tác vụ chung. Hệ thống của bạn có cách tính điểm ưu tiên cho khách hàng thân thiết rất "quái chiêu" mà không ngôn ngữ SQL nào có sẵn hàm TINH_DIEM_UU_TIEN() cho bạn cả. Đơn giản hóa câu lệnh Query: Một câu SELECT chứa hàng chục phép toán lồng nhau sẽ cực kỳ khó đọc. Đưa logic đó vào hàm giúp câu query chính trông sạch sẽ và dễ bảo trì hơn.
+Tính nhất quán: Nếu công thức tính lương thay đổi, bạn chỉ cần sửa trong 1 hàm duy nhất thay vì đi lùng sục hàng trăm file code hay store procedure để sửa thủ công.
+Bù đắp giới hạn của View: Như đã nói, UDF có thể nhận tham số, giúp nó linh hoạt hơn View rất nhiều trong việc lọc dữ liệu động.
 
 
   + Viết 01 Scalar Function (Hàm trả về một giá trị): Đưa ra 1 logic cho cơ sở dữ liệu của em, mà cần dùng đến function này. (SV TỰ NGHĨ RA YÊU CẦU CỦA HÀM VÀ VIẾT HÀM GIẢI QUYẾT NÓ)
