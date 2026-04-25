@@ -41,7 +41,9 @@
 
   + Tạo một Database mới với tên [Tên dự án]_[MaSV].  //LƯU Ý PHẢI CÓ MÃ SV CÁ NHÂN Ở TÊN CỦA DB ĐÚNG NHƯ YÊU CẦU, vd: QuanLyKhachSan_K123456789
 
-  + Tạo ít nhất 3 bảng có quan hệ với nhau. Yêu cầu:
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2878f067-2ef9-48d2-8856-656cff23981b" />
+
+     ít nhất 3 bảng có quan hệ với nhau. Yêu cầu:
 
   + Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...).
 
