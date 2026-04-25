@@ -51,6 +51,8 @@
 
 
   + Áp dụng đúng quy tắc đặt tên (BướuLạcĐà).
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1e53d77e-7e31-4d19-9fee-ea49c5237b29" />
+ 
 
   + Sử dụng cặp ngoặc [ ] để bọc tên bảng và tên trường trong script khởi tạo.
 
