@@ -57,6 +57,8 @@
  
 
   + Sử dụng cặp ngoặc [ ] để bọc tên bảng và tên trường trong script khởi tạo.
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1cf449f9-4a60-4ac9-994f-25bc0985ff70" />
+
 
   + Có giải thích chỗ nào là PK, chỗ nào là FK, trường nào có ràng buộc cứng CK (ví dụ điểm từ 0..10),...
     PK (Khóa chính): [MaHopDong] dùng để phân biệt các hợp đồng khác nhau, không cho phép trùng lặp.
