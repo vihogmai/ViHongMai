@@ -86,6 +86,19 @@
 ### Phần 2: Xây dựng Function (Kiến thức 8, 9) 
 
   + Hãy cho biết trong SQL Server có những loại function build_in (hàm có sẵn) nào, nêu 1 vài system function build_in mà em tìm hiểu được (ko cần nhiều, cần đặc sắc theo góc nhìn của em), cho SQL khai thác các hàm đó.
+    SQL Server cung cấp hàng trăm hàm chia thành các nhóm chính sau:
+• String Functions (Hàm chuỗi): Xử lý văn bản (Vd: LEN, UPPER, REPLACE, SUBSTRING).
+• Math Functions (Hàm toán học): Tính toán số học (Vd: ROUND, ABS, RAND).
+• Date and Time Functions (Hàm ngày tháng): Xử lý thời gian (Vd: GETDATE, DATEDIFF, DATEADD).
+• Aggregate Functions (Hàm tập hợp): Tính toán trên một tập dữ liệu (Vd: SUM, AVG, COUNT, MAX, MIN).
+• Conversion Functions (Hàm chuyển đổi): Chuyển đổi kiểu dữ liệu (Vd: CAST, CONVERT).
+2. Các hàm System mà e đã tìm hiểu đc
+1. ISNULL(check_expression, replacement_value): Kiểm tra nếu dữ liệu bị trống (NULL) thì thay bằng một giá trị khác. Rất quan trọng khi tính tiền để tránh bị lỗi phép tính.
+2. FORMAT(): Hàm này cực kỳ mạnh mẽ để định dạng dữ liệu theo chuẩn địa phương. Ví dụ: biến một con số thành định dạng tiền tệ Việt Nam (VNĐ).
+3. DATEDIFF(interval, start, end): Tính toán khoảng cách giữa hai mốc thời gian. Cực kỳ hữu ích để tính số tháng khách đã ở hoặc số ngày quá hạn tiền nhà
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/76b487fb-93d9-4687-977a-0213ca6fdcd1" />
+
+
 
   + Hàm do người dùng tự viết trong SQL thường mang mục đích gì? Nó có những loại nào? Mỗi loại thường được dùng khi nào? Tại sao có nhiều system function rồi mà vẫn cần tự viết fn riêng?
 
