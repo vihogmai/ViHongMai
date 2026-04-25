@@ -193,7 +193,8 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
   Bài toán: Chủ trọ thường xuyên cần kiểm tra danh sách các phòng thuộc một Loại phòng nhất định (ví dụ: tìm tất cả "Phòng VIP" hoặc "Phòng giá rẻ") để tư vấn cho khách.
   Tại sao cần Function? Thay vì mỗi lần tìm lại phải viết câu lệnh JOIN phức tạp giữa bảng PhongTro và LoaiPhong, ta tạo một hàm nhận vào Tên loại phòng và trả về toàn bộ danh sách phòng tương ứng kèm theo giá cả và trạng thái
 
-    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/17e359a6-4902-4606-af4f-c5dc5fef998f" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/7ae3a0b8-5f60-45ca-b8bf-aff2765e73de" />
+
 
   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a3b94cd4-c00a-4b78-89b9-9a8debf57648" />
 
