@@ -44,6 +44,8 @@
     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2878f067-2ef9-48d2-8856-656cff23981b" />
 
      ít nhất 3 bảng có quan hệ với nhau. Yêu cầu:
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/425ce64f-4821-492e-b6ec-448da0a3dad4" />
+
 
   + Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...).
 
