@@ -163,14 +163,58 @@ Dù SQL cung cấp sẵn rất nhiều hàm (như SUM, GETDATE, UPPER), UDF vẫ
   + Viết 01 Scalar Function (Hàm trả về một giá trị): Đưa ra 1 logic cho cơ sở dữ liệu của em, mà cần dùng đến function này. (SV TỰ NGHĨ RA YÊU CẦU CỦA HÀM VÀ VIẾT HÀM GIẢI QUYẾT NÓ)
 
     Sau khi đã có hàm, viết câu lệnh sql khai thác hàm đó.
+    
+  Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
+
+  Bài toán: Mỗi khi có khách mới thuê phòng, chủ trọ cần biết tổng số tiền khách phải nộp ngay lúc đó. Số tiền này bao gồm: Giá thuê phòng (lấy từ bảng Loại phòng thông qua bảng Phòng trọ) cộng với Số tiền cọc thực tế mà khách đưa.
+  Tại sao cần Function? Vì giá phòng nằm ở bảng LoaiPhong, mã phòng nằm ở bảng PhongTro, còn tiền cọc là giá trị biến động theo từng hợp đồng. Việc viết hàm giúp chuẩn hóa công thức này, tránh tính toán sai sót thủ công.
+
+  Tạo hàm: Hàm này nhận vào 2 tham số:@MaPhong và @TienCoc, sau đó trả về gia giá trị duy nhất.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/41abe883-e024-4deb-ab7d-b8c564f51378" />
+
+Viết hàm giải quyết:
+TH1: Tính cho một phòng cụ thể với số tiền cọc cụ thể.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ed222dbf-815b-4358-ba97-7f3c30331696" />
+
+TH2: TRuy vấn danh sách tất cả các phòng và dự toán tiền thu( khách cọc 1 tháng)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/444be9de-f1e4-4c99-afaa-03e41fe8a4f1" />
+
 
   + Viết 01 Inline Table-Valued Function: Trả về danh sách các bản ghi theo một điều kiện lọc cụ thể (SV TỰ NGHĨ RA YÊU CẦU CỦA HÀM VÀ VIẾT HÀM GIẢI QUYẾT NÓ)
 
     Sau khi đã có hàm, viết câu lệnh sql khai thác hàm đó.
 
+  Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
+Bài toán: Chủ trọ thường xuyên cần kiểm tra danh sách các phòng thuộc một Loại phòng nhất định (ví dụ: tìm tất cả "Phòng VIP" hoặc "Phòng giá rẻ") để tư vấn cho khách.
+Tại sao cần Function? Thay vì mỗi lần tìm lại phải viết câu lệnh JOIN phức tạp giữa bảng PhongTro và LoaiPhong, ta tạo một hàm nhận vào Tên loại phòng và trả về toàn bộ danh sách phòng tương ứng kèm theo giá cả và trạng thái
+
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/17e359a6-4902-4606-af4f-c5dc5fef998f" />
+
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/a3b94cd4-c00a-4b78-89b9-9a8debf57648" />
+
+
+
+
   + Viết 01 Multi-statement Table-Valued Function: Thực hiện xử lý logic phức tạp bên trong (có sử dụng biến bảng) trước khi trả về kết quả. (SV TỰ NGHĨ RA YÊU CẦU CỦA HÀM VÀ VIẾT HÀM GIẢI QUYẾT NÓ)
 
     Sau khi đã có hàm, viết câu lệnh sql khai thác hàm đó.
+
+
+    Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
+Bài toán: Chủ trọ muốn có một báo cáo "Phân loại diện tích phòng".
+• Nếu phòng dưới 20m², phân loại là "Phòng Nhỏ".
+• Nếu phòng từ 20m² đến 30m², phân loại là "Phòng Vừa".
+• Nếu phòng trên 30m², phân loại là "Phòng Rộng".
+Tại sao cần Multi-statement? Vì ta cần duyệt qua từng dòng dữ liệu, dùng cấu trúc điều khiển (logic phân loại) để gán nhãn cho từng phòng trước khi xuất ra danh sách cuối cùng.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/c322c4ae-0dc6-47bb-bf1a-5e880e836620" />
+
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/3f253beb-71c6-4cf4-a123-1f36de4c3c75" />
+
+
 
 ### Phần 3: Xây dựng Store Procedure (Kiến thức 10) 
 
