@@ -58,10 +58,15 @@ Trong bài tập lớn này, em chọn đề tài QUẢN LÝ PHÒNG TRỌ. Để
     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d61b7850-18da-486b-b6e2-eaf7d5db5b49" />
 
      Gồm 4 bảng có quan hệ với nhau.
+   
+
+   Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...)
 
   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/599ec565-f44b-4ba1-ac3e-b84487545642" />
 
-  + Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...).
+  Kiểu dữ liệu: Đa dạng gồm INT (Mã), NVARCHAR (Tên tiếng Việt), MONEY (Giá phòng), DATE (Hợp đồng), FLOAT (Diện tích).
+
+ 
 
 
   + Áp dụng đúng quy tắc đặt tên (BướuLạcĐà).
