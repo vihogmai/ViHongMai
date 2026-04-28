@@ -50,17 +50,18 @@ Trong bài tập lớn này, em chọn đề tài QUẢN LÝ PHÒNG TRỌ. Để
 
 1. Sinh viên tự chọn một chủ đề quản lý (Ví dụ: Quản lý thư viện, Quản lý khách sạn, hoặc Quản lý dự án, HOẶC BẤT KỲ BÀI TOÁN QUẢN LÝ NÀO KHÁC).
 
-   Tạo một Database mới với tên [Tên dự án]_[MaSV].  //LƯU Ý PHẢI CÓ MÃ SV CÁ NHÂN Ở TÊN CỦA DB ĐÚNG NHƯ YÊU CẦU, vd: QuanLyKhachSan_K123456789
-
     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2878f067-2ef9-48d2-8856-656cff23981b" />
 
-     ít nhất 3 bảng có quan hệ với nhau. Yêu cầu:
+     Database mới với tên [QuanLyTro.K235480106049].
+
     
     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d61b7850-18da-486b-b6e2-eaf7d5db5b49" />
 
+     Gồm 4 bảng có quan hệ với nhau.
+
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/599ec565-f44b-4ba1-ac3e-b84487545642" />
 
   + Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...).
-  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/599ec565-f44b-4ba1-ac3e-b84487545642" />
 
 
   + Áp dụng đúng quy tắc đặt tên (BướuLạcĐà).
