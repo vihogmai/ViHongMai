@@ -220,52 +220,67 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
 
 ### Phần 3: Xây dựng Store Procedure (Kiến thức 10) 
 
-  + Trong SQL Server có những SP có sẵn nào? nêu 1 vài system sp mà em tìm hiểu được, giải thích cách dùng chúng.
+1. System Stored Procedures là các thủ tục được cài đặt sẵn cùng với SQL Server, thường được lưu trữ trong Database hệ thống master hoặc msdb, nhưng có thể gọi được từ bất kỳ Database nào của người dùng. Đặc điểm nhận dạng của các thủ tục này là thường bắt đầu bằng tiền tố sp_. Chúng giúp thực hiện các nhiệm vụ từ quản trị bảo mật, kiểm tra cấu trúc đối tượng, đến theo dõi hiệu suất hệ thống.
 
-    System Stored Procedures là các thủ tục được cài đặt sẵn cùng với SQL Server, thường được lưu trữ trong Database hệ thống master hoặc msdb, nhưng có thể gọi được từ bất kỳ Database nào của người dùng. Đặc điểm nhận dạng của các thủ tục này là thường bắt đầu bằng tiền tố sp_. Chúng giúp thực hiện các nhiệm vụ từ quản trị bảo mật, kiểm tra cấu trúc đối tượng, đến theo dõi hiệu suất hệ thống.
-2. Một số System Stored Procedures tiêu biểu
-Dưới đây là một vài thủ tục quan trọng mà bạn có thể tìm hiểu và ứng dụng ngay trong đồ án:
-• sp_help: Đây là thủ tục "vạn năng" để xem thông tin chi tiết. Khi bạn truyền tên của một bảng, View hoặc Function vào, SQL Server sẽ trả về toàn bộ thông tin về các cột, kiểu dữ liệu, các khóa chính (Primary Key), khóa ngoại (Foreign Key) và các ràng buộc đi kèm.
+  Dưới đây là một vài thủ tục quan trọng mà bạn có thể tìm hiểu và ứng dụng ngay trong đồ án
+
+    • sp_help: Đây là thủ tục "vạn năng" để xem thông tin chi tiết. Khi bạn truyền tên của một bảng, View hoặc Function vào, SQL Server sẽ trả về toàn bộ thông tin về các cột, kiểu dữ liệu, các khóa chính (Primary Key), khóa ngoại (Foreign Key) và các ràng buộc đi kèm.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d733a86c-0937-4644-9baf-441c3544a154" />
-KQ: Trả về nhiều bảng dữ liệu nhỏ, liệt kê: Tên cột, kiểu dữ kiệu( int, nvarchar...,) độ dài, các khóa chính/ khóa ngoại.
 
-• Cách dùng: EXEC sp_help 'Ten_Bang';
-• sp_helptext: Thủ tục này cực kỳ hữu ích khi bạn muốn xem lại nội dung mã nguồn của một đối tượng (như Function, View, hoặc Procedure khác) đã được lưu trong cơ sở dữ liệu. Nó sẽ hiển thị toàn bộ đoạn code CREATE mà bạn đã thực thi trước đó.
-• Cách dùng: EXEC sp_helptext 'Ten_Doi_Tuong';
-• sp_rename: Đúng như tên gọi, thủ tục này dùng để đổi tên các đối tượng (bảng, cột, chỉ mục) trong Database hiện hành. Việc sử dụng thủ tục này được khuyến khích thay vì cố gắng sửa tên bằng giao diện đồ họa để đảm bảo tính đồng bộ.
+  KQ: Trả về nhiều bảng dữ liệu nhỏ, liệt kê: Tên cột, kiểu dữ kiệu( int, nvarchar...,) độ dài, các khóa chính/ khóa ngoại.
+
+  • sp_helptext: Thủ tục này cực kỳ hữu ích khi bạn muốn xem lại nội dung mã nguồn của một đối tượng (như Function, View, hoặc Procedure khác) đã được lưu trong cơ sở dữ liệu. Nó sẽ hiển thị toàn bộ đoạn code CREATE mà bạn đã thực thi trước đó.
+  
+  • Cách dùng: EXEC sp_helptext 'Ten_Doi_Tuong';
+
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d2ee0aad-b0e9-4f18-a013-1d71869ac4ad" />
+
+
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4f006408-0a8a-4095-a529-7c660e3f5e23" />
+
+    • sp_rename: Đúng như tên gọi, thủ tục này dùng để đổi tên các đối tượng (bảng, cột, chỉ mục) trong Database hiện hành. Việc sử dụng thủ tục này được khuyến khích thay vì cố gắng sửa tên bằng giao diện đồ họa để đảm bảo tính đồng bộ.
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/01f17759-f8e1-4699-8dbe-99ad0bbd21fe" />
 
-• Cách dùng: EXEC sp_rename 'Ten_Cu', 'Ten_Moi';
+    • Cách dùng: EXEC sp_rename 'Ten_Cu', 'Ten_Moi';
+
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4ebbfd31-9523-477d-b32e-89b245e8926d" />
 
-
-• sp_who: Cung cấp thông tin về các người dùng và các tiến trình (sessions) hiện đang kết nối vào SQL Server. Nó giúp bạn biết được ai đang truy cập vào Database của mình và trạng thái hoạt động của họ ra sao.\
-• Cách dùng: EXEC sp_who;
+    • sp_who: Cung cấp thông tin về các người dùng và các tiến trình (sessions) hiện đang kết nối vào SQL Server. Nó giúp bạn biết được ai đang truy cập vào Database của mình và trạng thái hoạt động của họ ra sao.
+  
+    • Cách dùng: EXEC sp_who;
+  
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fa914149-f6eb-481c-b16c-bc0096399417" />
 
-• sp_databases: Liệt kê danh sách tất cả các Database hiện có trên máy chủ SQL Server đó, kèm theo thông tin về kích thước của từng Database.
+    • sp_databases: Liệt kê danh sách tất cả các Database hiện có trên máy chủ SQL Server đó, kèm theo thông tin về kích thước của từng Database.
 
-• Cách dùng: EXEC sp_databases
+    • Cách dùng: EXEC sp_databases
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/45e3ab60-31d8-40f8-bd60-79246c9e5225" />
 
 
-  + Viết 01 Store Procedure đơn giản để thực hiện lệnh INSERT hoặc UPDATE dữ liệu, có kiểm tra điều kiện logic (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
+2. Viết 01 Store Procedure đơn giản để thực hiện lệnh INSERT hoặc UPDATE dữ liệu, có kiểm tra điều kiện logic (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
 
-"Thêm mới một phòng trọ (PhongTro). Nếu mã phòng đã tồn tại thì cập nhật thông tin, nếu chưa có thì thêm mới. Tuy nhiên, đơn giá (DonGia) không được phép nhỏ hơn hoặc bằng 0."
+  "Thêm mới một phòng trọ (PhongTro). Nếu mã phòng đã tồn tại thì cập nhật thông tin, nếu chưa có thì thêm mới. Tuy nhiên, đơn giá (DonGia) không được phép nhỏ hơn hoặc bằng 0."
 
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1fa01c22-4c0f-4ae9-9c06-2f7fccb187b4" />
    
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6df6322f-adaa-41d5-ab76-119d0f794ae5" />
 
+3. Viết 01 Store Procedure có sử dụng tham số OUTPUT để trả về một giá trị tính toán (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ, SP NÀY CÓ DÙNG THAM SỐ LOẠI OUTPUT
+
+"Tính tổng doanh thu dự kiến của một loại phòng cụ thể (ví dụ: loại phòng 'VIP'). Kết quả tổng tiền sẽ được trả về thông qua một tham số OUTPUT để có thể tái sử dụng ở các script khác."
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bfdd6266-8155-4e22-b97d-0ef3cfb8ce55" />
+
+4. Viết 01 Store Procedure trả về một tập kết quả (Result set) từ lệnh SELECT sau khi đã join nhiều bảng. (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
+
+   Thống kê danh sách hợp đồng thuê phòng đang còn hiệu lực. Người quản lý cần một danh sách tổng hợp để biết khách nào đang ở phòng nào, thuộc loại phòng gì và giá thuê bao nhiêu. Dữ liệu cần được kết hợp từ 4 bảng: KhachThue, HopDong, CanHo, và LoaiPhong.
+
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d1c81095-56e3-4212-97da-cd5696aa7c5b" />
 
 
-
- <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b910d645-1e99-4f18-aefb-b3cd2c9f763e" />
-
-  + Viết 01 Store Procedure trả về một tập kết quả (Result set) từ lệnh SELECT sau khi đã join nhiều bảng. (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
 
 ### Phần 4: Trigger và Xử lý logic nghiệp vụ (Kiến thức 11)
 
