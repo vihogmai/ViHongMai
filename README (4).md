@@ -36,6 +36,8 @@
 ## NỘI DUNG YÊU CẦU (GỒM 5 PHẦN):
 
 ### Phần 1: Thiết kế và Khởi tạo Cấu trúc Dữ liệu (Kiến thức 6, 7) 
+SV: Vi Hồng Mai. K235480106049
+Đề tài: Quản lý trọ
 
   + Sinh viên tự chọn một chủ đề quản lý (Ví dụ: Quản lý thư viện, Quản lý khách sạn, hoặc Quản lý dự án, HOẶC BẤT KỲ BÀI TOÁN QUẢN LÝ NÀO KHÁC).
 
