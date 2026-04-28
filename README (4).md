@@ -246,11 +246,24 @@ KQ: Trả về nhiều bảng dữ liệu nhỏ, liệt kê: Tên cột, kiểu 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/fa914149-f6eb-481c-b16c-bc0096399417" />
 
 • sp_databases: Liệt kê danh sách tất cả các Database hiện có trên máy chủ SQL Server đó, kèm theo thông tin về kích thước của từng Database.
+
 • Cách dùng: EXEC sp_databases
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/45e3ab60-31d8-40f8-bd60-79246c9e5225" />
+
 
   + Viết 01 Store Procedure đơn giản để thực hiện lệnh INSERT hoặc UPDATE dữ liệu, có kiểm tra điều kiện logic (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
 
-  + Viết 01 Store Procedure có sử dụng tham số OUTPUT để trả về một giá trị tính toán (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ, SP NÀY CÓ DÙNG THAM SỐ LOẠI OUTPUT)
+"Thêm mới một phòng trọ (PhongTro). Nếu mã phòng đã tồn tại thì cập nhật thông tin, nếu chưa có thì thêm mới. Tuy nhiên, đơn giá (DonGia) không được phép nhỏ hơn hoặc bằng 0."
+
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/1fa01c22-4c0f-4ae9-9c06-2f7fccb187b4" />
+   
+   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6df6322f-adaa-41d5-ab76-119d0f794ae5" />
+
+
+
+
+ <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b910d645-1e99-4f18-aefb-b3cd2c9f763e" />
 
   + Viết 01 Store Procedure trả về một tập kết quả (Result set) từ lệnh SELECT sau khi đã join nhiều bảng. (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
 
