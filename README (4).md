@@ -237,11 +237,8 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d2ee0aad-b0e9-4f18-a013-1d71869ac4ad" />
 
 
-   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4f006408-0a8a-4095-a529-7c660e3f5e23" />
 
     • sp_rename: Đúng như tên gọi, thủ tục này dùng để đổi tên các đối tượng (bảng, cột, chỉ mục) trong Database hiện hành. Việc sử dụng thủ tục này được khuyến khích thay vì cố gắng sửa tên bằng giao diện đồ họa để đảm bảo tính đồng bộ.
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/01f17759-f8e1-4699-8dbe-99ad0bbd21fe" />
 
     • Cách dùng: EXEC sp_rename 'Ten_Cu', 'Ten_Moi';
 
