@@ -281,19 +281,59 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
 
 ### Phần 4: Trigger và Xử lý logic nghiệp vụ (Kiến thức 11)
 
-  + Viết 01 Trigger để tự động làm gì đó tại 1 bảng B khi mà dữ liệu thay đổi dữ liệu ở bảng A. Logic giải quyết do sv tự nghĩ ra, sao cho thực tế và thuyết phục.
+  1. Viết 01 Trigger để tự động làm gì đó tại 1 bảng B khi mà dữ liệu thay đổi dữ liệu ở bảng A. Logic giải quyết do sv tự nghĩ ra, sao cho thực tế và thuyết phục.
 
-  + Thử viết Trigger cho Bảng A : Khi insert thì cập nhật dữ liệu vào bảng B; sau đó viết trigger cho bảng B để khi B được cập nhật thì cập nhật sang bảng A : Quan sát các thông báo (nếu có) của hệ thống, giải thích các thông báo đó (nếu có). Đưa ra nhật xét cuối cùng về tình trạng này.
+    Bài toán đặt ra: Tự động cập nhật số điện thoại của khách hàng trên tất cả các hợp đồng khi thông tin khách hàng thay đổi
+
+    Yêu cầu: Khi cập nhật số điện thoại (SoDienThoai) của một khách hàng trong bảng KhachThue (Bảng A), một bảng nhật ký chỉnh sửa LichSuThayDoi (Bảng B) sẽ tự động ghi lại thông tin này để quản lý.
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a392cb1-8067-4bf3-a9d6-dcf0b3e296c6" />
+
+
+  2.  Thử viết Trigger cho Bảng A : Khi insert thì cập nhật dữ liệu vào bảng B; sau đó viết trigger cho bảng B để khi B được cập nhật thì cập nhật sang bảng A : Quan sát các thông báo (nếu có) của hệ thống, giải thích các thông báo đó (nếu có). Đưa ra nhật xét cuối cùng về tình trạng này.
+
+    
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/220ebeb4-d137-49bc-9d19-3531214ef2de" />
+
+  - Hiện tượng lặp: Các dòng "Trigger A/B đang chạy" xuất hiện liên tục cho thấy Trigger của bảng này đang gọi Update bảng kia và ngược lại.
+
+  - Lỗi Msg 2628 (Truncated value): Trong code của bạn, Trigger B có lệnh: SET HoTen = HoTen + ' (Updated)'.
+
+  - Mỗi lần vòng lặp chạy, tên khách hàng lại dài thêm 10 ký tự. Chỉ sau vài vòng, độ dài chuỗi đã vượt quá giới hạn khai báo của cột HoTen (thường là NVARCHAR(100)), dẫn đến việc SQL Server chặn lại vì dữ liệu bị tràn.
+
+  - Lỗi Msg 217 (Nesting level - Nếu không bị tràn chuỗi): Nếu cột tên của cực kỳ dài, hệ thống sẽ chạy đến khi đạt mức 32 cấp lặp chồng nhau rồi mới tự ngắt.
 
 ### Phần 5: Cursor và Duyệt dữ liệu (Kiến thức 11)
 
   + Viết một đoạn script sử dụng CURSOR để duyệt qua danh sách của 1 câu lệnh SQL dạng SELECT, duyệt qua từng bản ghi, xử lý riêng từng bản ghi (THEO LOGIC SV TỰ ĐẶT RA: SAO CHO HỢP LÝ VÀ THUYẾT PHỤC)
 
+    Bài toán: Duyệt qua danh sách các phòng, nếu giá phòng > 4,000,000 thì in ra thông báo "Phòng cao cấp", ngược lại in ra "Phòng bình dân".
+
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/49f2b556-404c-46ca-a12c-d7638c4afe03" />
+
+
   + Tìm cách không sử dụng CURSOR để giải quyết bài toán mà em đã dùng CURSOR mới giải quyết được ở trên. thử so sánh tốc độ giữa có dùng cursor và không dùng cursor (nếu cùng kết quả) thì thời gian xử lý cái nào nhanh hơn, cần ảnh chụp màn hình minh chứng.
 
-  + Nếu vẫn tìm được cách dùng SQL để giải quyết vấn đề mà ko cần CURSOR: thử nghĩ bài toán khác, mà chỉ CURSOR mới giải quyết được, còn SQL rất khó giải quyết đc (theo logic suy nghĩ của em)
+    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/458f72de-59ad-4217-b532-259d475c0f2a" />
 
----------
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bbd2769d-141a-4efc-a8b4-656a8c13198f" />
+
+"như trên hình, Trong thực tế, các câu lệnh không dùng Cursor (Set-based) thường nhanh hơnso với dùng Cursor khi làm việc với lượng dữ liệu lớn."
+
+
+3. Nếu vẫn tìm được cách dùng SQL để giải quyết vấn đề mà ko cần CURSOR: thử nghĩ bài toán khác, mà chỉ CURSOR mới giải quyết được, còn SQL rất khó giải quyết đc (theo logic suy nghĩ của em)
+   
+  Tự động tạo Tài khoản đăng nhập (Username) cho Khách thuê
+  bài tập: Bạn mới nhập một danh sách 100 khách thuê vào bảng KhachThue. Bây giờ bạn cần tạo cho mỗi người một Username riêng biệt trong bảng TaiKhoan dựa trên tên của họ (ví dụ: Nguyễn Văn A -> anv_2026).
+  
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e8ae0735-c54b-4409-bfe3-5b29dd4ae378" />
+
+  * Tại sao chỉ CURSOR mới giải quyết tốt: * Nó cho phép em kiểm soát từng bước: Với mỗi khách hàng, em có thể in ra thông báo trạng thái (PRINT) hoặc thực hiện các lệnh kiểm tra lồng nhau (IF...ELSE) cực kỳ chi tiết mà lệnh INSERT tập hợp không thể hiển thị báo cáo từng dòng như vậy được.
+
+Nó tách biệt quá trình xử lý: Nếu dòng số 5 bị lỗi, em có thể dùng TRY...CATCH bên trong Cursor để bỏ qua dòng đó và tiếp tục xử lý dòng số 6. Lệnh SQL tập hợp nếu lỗi 1 dòng sẽ văng lỗi cả tập hợp (Rollback
+
+
+
 
 ## HƯỚNG DẪN TRÌNH BÀY TRÊN GITHUB
 Sinh viên trình bày file README.md theo cấu trúc:
