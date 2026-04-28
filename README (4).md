@@ -115,7 +115,7 @@ Trong bài tập lớn này, em chọn đề tài QUẢN LÝ PHÒNG TRỌ. Để
 + Aggregate Functions (Hàm tập hợp): Tính toán trên một tập dữ liệu (Vd: SUM, AVG, COUNT, MAX, MIN).
 + Conversion Functions (Hàm chuyển đổi): Chuyển đổi kiểu dữ liệu (Vd: CAST, CONVERT).
 
- * Các hàm System mà e đã tìm hiểu đc:
+  Các hàm System mà e đã tìm hiểu đc:
  
 + ISNULL(check_expression, replacement_value): Kiểm tra nếu dữ liệu bị trống (NULL) thì thay bằng một giá trị khác. Rất quan trọng khi tính tiền để tránh bị lỗi phép tính.
 
@@ -129,7 +129,7 @@ Trong bài tập lớn này, em chọn đề tài QUẢN LÝ PHÒNG TRỌ. Để
 
  2. Hàm do người dùng tự viết trong SQL thường mang mục đích gì? Nó có những loại nào? Mỗi loại thường được dùng khi nào? Tại sao có nhiều system function rồi mà vẫn cần tự viết fn riêng?
 
-  _Mục đích:
+  Mục đích:
     
     + Tính tái sử dụng: Thay vì phải viết đi viết lại một công thức tính tiền cọc phức tạp ở 10 trang báo cáo khác nhau, bạn chỉ cần viết một cái hàm và gọi tên nó ra.
     
