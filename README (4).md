@@ -37,11 +37,20 @@
 
 ### Phần 1: Thiết kế và Khởi tạo Cấu trúc Dữ liệu (Kiến thức 6, 7) 
 SV: Vi Hồng Mai. K235480106049
-Đề tài: Quản lý trọ
 
-  + Sinh viên tự chọn một chủ đề quản lý (Ví dụ: Quản lý thư viện, Quản lý khách sạn, hoặc Quản lý dự án, HOẶC BẤT KỲ BÀI TOÁN QUẢN LÝ NÀO KHÁC).
+Trong bài tập lớn này, em chọn đề tài QUẢN LÝ PHÒNG TRỌ. Để giải quyết bài toán một cách hệ thống, em thực hiện theo các bước:
 
-  + Tạo một Database mới với tên [Tên dự án]_[MaSV].  //LƯU Ý PHẢI CÓ MÃ SV CÁ NHÂN Ở TÊN CỦA DB ĐÚNG NHƯ YÊU CẦU, vd: QuanLyKhachSan_K123456789
+  + Xây dựng nền tảng: Thiết kế Database chuẩn hóa với các ràng buộc cứng (CHECK, PRIMARY KEY, FOREIGN KEY) để đảm bảo dữ liệu "sạch" ngay từ đầu.
+
+  + Tối ưu hóa bằng Function: Tận dụng hàm hệ thống và xây dựng hàm tự định nghĩa để tái sử dụng các công thức tính toán phức tạp (như tính tiền phòng theo số ngày).
+
+  + Điều khiển nghiệp vụ bằng SP & Trigger: Sử dụng Stored Procedure để đóng gói các thao tác thêm/sửa/xóa và Trigger để tự động hóa việc ghi nhật ký hoặc cập nhật dữ liệu chéo.
+
+  + Phân tích hiệu năng: So sánh giữa xử lý tập hợp (Set-based) và xử lý tuần tự (Cursor) để hiểu rõ khi nào cần ưu tiên tốc độ, khi nào cần sự linh hoạt.
+
+1. Sinh viên tự chọn một chủ đề quản lý (Ví dụ: Quản lý thư viện, Quản lý khách sạn, hoặc Quản lý dự án, HOẶC BẤT KỲ BÀI TOÁN QUẢN LÝ NÀO KHÁC).
+
+   Tạo một Database mới với tên [Tên dự án]_[MaSV].  //LƯU Ý PHẢI CÓ MÃ SV CÁ NHÂN Ở TÊN CỦA DB ĐÚNG NHƯ YÊU CẦU, vd: QuanLyKhachSan_K123456789
 
     <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2878f067-2ef9-48d2-8856-656cff23981b" />
 
