@@ -295,8 +295,8 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
 3. Viết 01 Store Procedure có sử dụng tham số OUTPUT để trả về một giá trị tính toán (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ, SP NÀY CÓ DÙNG THAM SỐ LOẠI OUTPUT
 
 "Tính tổng doanh thu dự kiến của một loại phòng cụ thể (ví dụ: loại phòng 'VIP'). Kết quả tổng tiền sẽ được trả về thông qua một tham số OUTPUT để có thể tái sử dụng ở các script khác."
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/292862b8-9e94-4a20-a578-b439dffe94bf" />
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/bfdd6266-8155-4e22-b97d-0ef3cfb8ce55" />
 
 4. Viết 01 Store Procedure trả về một tập kết quả (Result set) từ lệnh SELECT sau khi đã join nhiều bảng. (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
 
