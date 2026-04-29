@@ -319,8 +319,8 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
 
   2.  Thử viết Trigger cho Bảng A : Khi insert thì cập nhật dữ liệu vào bảng B; sau đó viết trigger cho bảng B để khi B được cập nhật thì cập nhật sang bảng A : Quan sát các thông báo (nếu có) của hệ thống, giải thích các thông báo đó (nếu có). Đưa ra nhật xét cuối cùng về tình trạng này.
 
-    
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/220ebeb4-d137-49bc-9d19-3531214ef2de" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f7ba00fe-8dc8-4de9-808c-5ad4c30044df" />
+
 
   - Hiện tượng lặp: Các dòng "Trigger A/B đang chạy" xuất hiện liên tục cho thấy Trigger của bảng này đang gọi Update bảng kia và ngược lại.
 
