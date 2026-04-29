@@ -301,8 +301,8 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
 4. Viết 01 Store Procedure trả về một tập kết quả (Result set) từ lệnh SELECT sau khi đã join nhiều bảng. (SV TỰ NGHĨ RA YÊU CẦU CỦA SP VÀ VIẾT SP GIẢI QUYẾT NÓ)
 
    Thống kê danh sách hợp đồng thuê phòng đang còn hiệu lực. Người quản lý cần một danh sách tổng hợp để biết khách nào đang ở phòng nào, thuộc loại phòng gì và giá thuê bao nhiêu. Dữ liệu cần được kết hợp từ 4 bảng: KhachThue, HopDong, CanHo, và LoaiPhong.
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/5018d0dd-9d11-419f-b9bc-a2b4cbbb22ee" />
 
-   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d1c81095-56e3-4212-97da-cd5696aa7c5b" />
 
 
 
