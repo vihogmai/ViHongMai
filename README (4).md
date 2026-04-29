@@ -62,9 +62,10 @@ Trong bài tập lớn này, em chọn đề tài QUẢN LÝ PHÒNG TRỌ. Để
 
   + Sử dụng đa dạng các kiểu dữ liệu (Số nguyên, số thực, chuỗi ký tự Unicode, ngày tháng, tiền tệ, ...)
 
-  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/599ec565-f44b-4ba1-ac3e-b84487545642" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9ae8073e-8b09-49d8-b142-64deebf8cf33" />
 
-  Kiểu dữ liệu: Đa dạng gồm INT (Mã), NVARCHAR (Tên tiếng Việt), MONEY (Giá phòng), DATE (Hợp đồng), FLOAT (Diện tích).
+
+Kiểu dữ liệu: Đa dạng gồm INT (Mã), NVARCHAR (Tên tiếng Việt), MONEY (Giá phòng), DATE (Hợp đồng), FLOAT (Diện tích).
 
  
 
