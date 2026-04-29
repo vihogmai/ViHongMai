@@ -141,7 +141,8 @@ Kiểu dữ liệu: Đa dạng gồm INT (Mã), NVARCHAR (Tên tiếng Việt), 
 
     "Trong hệ thống quản lý trọ, việc tính toán tiền phòng tháng đầu rất dễ nhầm lẫn. Vì vậy, chúng tôi xây dựng hàm fn_TongTienNopDauVao để chuẩn hóa công thức này."
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/9a183e9f-f642-4049-ac3d-0b9002a01cbb" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/6f1af284-d80a-4d02-8db9-24960b375db6" />
+
 
 
   có 3 loại:
