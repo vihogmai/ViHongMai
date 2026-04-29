@@ -314,7 +314,7 @@ Yêu cầu của hàm (Logic nghiệp vụ tự nghĩ ra)
 
     Yêu cầu: Khi cập nhật số điện thoại (SoDienThoai) của một khách hàng trong bảng KhachThue (Bảng A), một bảng nhật ký chỉnh sửa LichSuThayDoi (Bảng B) sẽ tự động ghi lại thông tin này để quản lý.
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a392cb1-8067-4bf3-a9d6-dcf0b3e296c6" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/809039d7-ab52-4428-92fd-8f7c1d9f74de" />
 
 
   2.  Thử viết Trigger cho Bảng A : Khi insert thì cập nhật dữ liệu vào bảng B; sau đó viết trigger cho bảng B để khi B được cập nhật thì cập nhật sang bảng A : Quan sát các thông báo (nếu có) của hệ thống, giải thích các thông báo đó (nếu có). Đưa ra nhật xét cuối cùng về tình trạng này.
