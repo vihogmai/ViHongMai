@@ -152,7 +152,8 @@ Kiểu dữ liệu: Đa dạng gồm INT (Mã), NVARCHAR (Tên tiếng Việt), 
     • Khi nào dùng: * Thực hiện các phép tính toán đơn giản dựa trên đầu vào (ví dụ: tính tổng tiền, tính thuế, tính tuổi).
     • Chuẩn hóa dữ liệu (ví dụ: chuyển tên thành viết hoa, cắt tỉa khoảng trắng).
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4c748bba-7155-425e-bd5c-a87f8bd1b59c" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/ad25253e-4e3d-4c3d-aeb9-534372dd45e1" />
+
 
 
 Inline Table-Valued Function (Hàm trả về bảng đơn giản)
